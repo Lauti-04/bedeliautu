@@ -9,6 +9,8 @@ import jakarta.persistence.Enumerated;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.Lob;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.Email;
+
 import java.util.Set;
 
 @Entity
@@ -25,6 +27,8 @@ public class User extends AbstractEntity {
     @Lob
     @Column(length = 1000000)
     private byte[] profilePicture;
+    @Email
+    private String email;
 
     public String getUsername() {
         return username;
@@ -57,4 +61,11 @@ public class User extends AbstractEntity {
         this.profilePicture = profilePicture;
     }
 
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
 }
