@@ -2,6 +2,8 @@ package com.slanf.application.services;
 
 import com.slanf.application.data.User;
 import com.slanf.application.data.UserRepository;
+
+import java.util.List;
 import java.util.Optional;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -41,4 +43,7 @@ public class UserService {
         return (int) repository.count();
     }
 
+    public List<User> findAll() {
+        return  repository.findAll();
+    }
 }
